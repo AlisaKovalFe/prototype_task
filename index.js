@@ -1,5 +1,4 @@
 //Написать функции-конструкторы кошечек и собачек, прототипов которых является ф-к животное.
-
 function Animal(name, age, breed, voice, meal) {
     this.name = name
     this.age = age
@@ -21,8 +20,12 @@ Animal.prototype.say = function () {
 // const dog = new Animal('Мими', 2, 'шпиц', 'гав')
 
 
-function Cat(quantityofVaccines) {
-    Animal.apply(this, arguments) //непонятно
+function Cat(name, age, breed, voice, meal, quantityofVaccines) {
+
+    // Вызывает функцию с указанным контекстом this и отдельными аргументами
+    //это вот так всегда делаеся или можно по-другому?
+    Animal.call(this, name, age, breed, voice, meal)
+
     this.likesToSleep = true,
         this.quantityofVaccines = quantityofVaccines
 }
@@ -37,18 +40,16 @@ function Dog(owner, speed) {
     }
 }
 
-Object.setPrototypeOf(Cat, Animal)
-Object.setPrototypeOf(Dog, Animal)
+
+//так нельзя было?
+// Object.setPrototypeOf(Cat, Animal)
+// Object.setPrototypeOf(Dog, Animal)
 
 
 const cat = new Cat('Барсик', 1, 'британец', 'мяу', 'рыбка', 4)
-//в количестве вакцин консоль пишет барски, likesToSleep я в аргументы не хочу передавать, так как это пусть будет по умолчанию
-//если ставлю likesToSleep в аругменты все равно чушь получается
-
-
 const dog = new Dog('Мими', 2, 'шпиц', 'гав', 'мясо', 'Алиса', 2)
 
-console.log(cat); //почему в количество вакцин записан барсик?
+console.log(cat);
 console.log(cat.eat());
 // console.log(cat.say()); //не работает
 
