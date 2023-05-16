@@ -37,3 +37,11 @@ let ladder = {
 };
 
 console.log(ladder.up().up().down().showStep().down().showStep());
+
+const a = [1, 2, 3, 5]
+const b = [...a]
+
+a.splice(2, 1, ...a)
+
+console.log(a);
+

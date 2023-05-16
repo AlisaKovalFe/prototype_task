@@ -33,9 +33,9 @@ function Cat(name, age, breed, voice, meal, quantityofVaccines) {
 function Dog(owner, speed) {
     Animal.apply(this, arguments)
     this.speed = speed
-    this.owner = owner
+    this.owner = owner // порядок неважен?
 
-    this.run = function run() {
+    this.run = function () {
         return `${this.name} run with ${this.speed} km/h`
     }
 }
