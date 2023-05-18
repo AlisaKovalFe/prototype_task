@@ -13,6 +13,6 @@ const obj = {
     '7': 'sunday',
 }
 
-const day = 3
+const day = 3 // написала числом, а не строкой из-за условия задачи
 
 console.log(obj[day]);

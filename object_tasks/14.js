@@ -4,8 +4,7 @@
 
 const compareObj = (obj1, obj2) => {
 
-    let json1 = JSON.stringify(obj1)
-    console.log(json1); // почему в консоли нет кавычек у первых фигурных скобок?
+    //Вопрос: почему при выводе в консоль JSON.stringify(obj1)) нет кавычек у первых фигурных скобок ('{{"a":1,"b":{"c":1}}')? у JSON же должны быть эти первые кавычки, это же строка?
 
     return JSON.stringify(obj1) === JSON.stringify(obj2)
 

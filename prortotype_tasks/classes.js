@@ -1,4 +1,6 @@
 //Написать функции-конструкторы кошечек и собачек, прототипов которых является ф-к животное.
+
+// сделал сама для практики
 class Animal {
     constructor(name, age, breed, voice, meal) {
         this.name = name
@@ -6,7 +8,6 @@ class Animal {
         this.breed = breed
         this.voice = voice
         this.meal = meal
-
     }
 
     eat() {
@@ -28,6 +29,8 @@ class Cat extends Animal {
 }
 
 class Dog extends Animal {
+    // Вопрос: менять порядок параметров функции с аргументами при вызове нельзя? я пробовала, он косячно в поля записывает
+    // если нельзя, то как тут применить деструктуризацию и можно ли?
     constructor(name, age, breed, voice, meal, owner, speed) {
         super(name, age, breed, voice, meal)
         this.owner = owner
@@ -47,7 +50,7 @@ console.log(cat);
 console.log(cat.eat());
 console.log(cat.say());
 
-console.log(dog); //почему в owner записана Мими?
+console.log(dog);
 console.log(dog.eat());
 console.log(dog.run());
 console.log(dog.say()); 
