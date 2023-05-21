@@ -20,7 +20,7 @@ Animal.prototype.say = function () {
 }
 
 class Cat extends Animal {
-    constructor(name, age, breed, voice, meal, quantityofVaccines) {
+    constructor({ name, age, breed, voice, meal, quantityofVaccines }) {
         super(name, age, breed, voice, meal)
 
         this.likesToSleep = true,
