@@ -5,17 +5,19 @@
 // Дан массив, найти повторяющиеся значения в массиве и вернуть новый массив из этих значений. Элементы возвращаемого массива должны отображаться в том порядке, в котором они впервые появились как дубликаты. Числа и соотв строки не дубликаты
 
 const duplicates = (arr) => {
-    // return arr.filter((el, index) => arr.indexOf(el) !== index)
-    let newArr = []
+    const firtsFilter = arr.filter((el, index) => arr.indexOf(el) !== index)
 
-    for (let i = 0; i < arr.length; i++) {
+    return firtsFilter.filter((el, index) => firtsFilter.indexOf(el) == index)
+    // let newArr = []
 
-        console.log(arr.indexOf(3));
-        if (arr.indexOf(arr[i]) !== i && !newArr.includes(arr[i])) {
-            newArr.push(arr[i])
-        }
-    }
-    return newArr
+    // for (let i = 0; i < arr.length; i++) {
+
+    //     console.log(arr.indexOf(3));
+    //     if (arr.indexOf(arr[i]) !== i && !newArr.includes(arr[i])) {
+    //         newArr.push(arr[i])
+    //     }
+    // }
+    // return newArr
 
 
 }
