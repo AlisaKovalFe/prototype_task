@@ -17,8 +17,7 @@ const countPositivesSumNegatives = (input) => {
     let sumPositive = 0
     let sumNegative = 0
 
-    if (Boolean(input) == false) return []
-    if (input.length == 0) return []
+    if (!input == false || !input.length == 0) return []
 
     input.forEach((function (el) {
         el > 0 ? sumPositive++ : sumNegative += el

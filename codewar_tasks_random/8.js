@@ -3,18 +3,26 @@
 // Create a function that takes in a list of button inputs and returns the final state.
 // If no button is currently active, return Nothing.
 // If the list is empty, return Nothing.
+// Like, Dislike, Nothing come from Preloaded !!!!!!!!!!!
 
 const likeOrDislike = (buttons) => {
 
+    let state = 'Nothing'
+
     for (let i = 0; i < buttons.length; i++) {
-        if (buttons.length == 1) return buttons[0]
-        if (buttons.length == 1) return 'Nothing'
-        if (buttons[i].length - 1 == buttons[i].length - 2) return 'Nothing'
-        if (buttons[i].length - 1 !== buttons[i].length - 2) return buttons[i].length - 1
+        if (buttons[i] === state) {
+            state = 'Nothing'
+        } else {
+            state = buttons[i]
+        }
     }
+    return state
+
+    //метод
+    // return buttons.reduce((state, button) => button === state ? 'Nothing' : button, 'Nothing')
 }
 
-console.log(likeOrDislike([Dislike]));
-console.log(likeOrDislike([Like, Like]));
-console.log(likeOrDislike([Dislike, Like]));
-console.log(likeOrDislike([Like, Dislike, Dislike]));
+console.log(likeOrDislike(['Dislike']));  //Dislike
+console.log(likeOrDislike(['Like', 'Like'])); // Nothing
+console.log(likeOrDislike(['Dislike', 'Like']));  // Like
+console.log(likeOrDislike(['Like', 'Dislike', 'Dislike'])); // Nothing

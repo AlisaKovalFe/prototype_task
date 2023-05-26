@@ -14,3 +14,11 @@ const digitize = (n) => {
 }
 
 console.log(digitize(35231));
+
+let first = 'a'
+let second = { b: 2 }
+
+let resul1 = { first, second }
+let result2 = { ...first, ...second }
+console.log(resul1);
+console.log(result2);
